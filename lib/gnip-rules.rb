@@ -3,7 +3,7 @@ require 'httparty'
 require 'json'
 
 module Gnip
-  class Rules
+  class RulesConnection
     include HTTParty
 
     headers 'Accept' => 'application/json', 'Content-Type' => 'application/json'
@@ -18,7 +18,7 @@ module Gnip
         uri = uri || @config["streaming_url"]
       end
 
-      self.class.basic_auth username , password 
+      self.class.basic_auth username , password
       self.class.base_uri uri
     end
 
@@ -52,8 +52,8 @@ module Gnip
           You must provide a configuration file at config/gnip.yml
 
             development: &development
-              username: omg@omg.com 
-              password: larl! 
+              username: omg@omg.com
+              password: larl!
               account: larloperator
               streaming_url: 'https://stream.gnip.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod/'
 
@@ -63,7 +63,7 @@ module Gnip
     end
 
     def environment
-      #Clearly there's a better way. 
+      #Clearly there's a better way.
       if defined?(Rails)
         Rails.env
       elsif defined?(RAILS_ENV)
@@ -86,7 +86,7 @@ module Gnip
       @tag = t
       @errors = []
     end
-    
+
     # def to_json
     #   o = {"value" => value}
     #   o.merge!( "tag" => tag ) unless tag.nil?

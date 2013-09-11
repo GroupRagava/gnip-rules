@@ -1,6 +1,6 @@
 # gnip-rules
 
-Provides a quick and easy way to manage your rules via Gnip Rules API. 
+Provides a quick and easy way to manage your rules via Gnip Rules API.
 
 ## Installation
 
@@ -10,25 +10,25 @@ Provides a quick and easy way to manage your rules via Gnip Rules API.
 
 ## Configuration
 
-There are two ways you can provide credentials to the gnip-api gem. 
+There are two ways you can provide credentials to the gnip-api gem.
 
 * Pass them to the initialize method
 
-  `Gnip::Rules.new( "chieflarl@larlbang.com", "larl!operator" ,'https://stream.gnip.com/.../YOUR_ACCOUNT/.../prod' )`
+  `Gnip::RulesConnection.new( "chieflarl@larlbang.com", "larl!operator" ,'https://api.gnip.com:443/.../YOUR_ACCOUNT/.../rules.json' )`
 
-* Via a configuration file at config/gnip.yml 
+* Via a configuration file at config/gnip.yml
 
 ```yaml
  development: &development
    username: chieflarl@larlbang.com
-   password: larl!operator 
-   streaming_url:'https://stream.gnip.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/prod'
+   password: larl!operator
+   streaming_url:'https://api.gnip.com:443/accounts/YOUR_ACCOUNT/publishers/twitter/streams/track/Production/rules.json'
 ```
 
 ## Usage
 
 ```ruby
- @gnip_rules = Gnip::Rules.new
+ @gnip_rules = Gnip::RulesConnection.new
 ```
 
 ### Adding
@@ -73,7 +73,7 @@ Make sure you have the config file mentioned above at config/gnip.yml
 ```
 
 ## Contributing to gnip-rules
- 
+
 * Check out the latest master to make sure the feature hasn't been implemented or the bug hasn't been fixed yet
 * Check out the issue tracker to make sure someone already hasn't requested it and/or contributed it
 * Fork the project
