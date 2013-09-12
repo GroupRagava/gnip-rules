@@ -1,23 +1,23 @@
 require 'helper'
 
-class TestGnipRules < Test::Unit::TestCase
-  context 'Gnip' do
+class TestGnipRules::Rules < Test::Unit::TestCase
+  context 'GnipRules::' do
     setup do
-      @gnip = Gnip::RulesConnection.new
+      @gnip = GnipRules::RulesConnection.new
     end
 
     should "allow creation of rules" do
-      response = @gnip.add([Gnip::Rule.new( '"new spyro"' )])
+      response = @gnip.add([GnipRules::Rule.new( '"new spyro"' )])
       assert{ response.response.class == Net::HTTPCreated }
     end
 
     should 'allow removal of rules' do
-     response = @gnip.remove([Gnip::Rule.new( '"new spyro"' )])
+     response = @gnip.remove([GnipRules::Rule.new( '"new spyro"' )])
      assert{ response.response.class == Net::HTTPOK }
     end
 
     should 'allow creation of tagged rules' do
-      response = @gnip.add([ Gnip::Rule.new('#skylanders -skylanders -spyro', 'Skylanders')])
+      response = @gnip.add([ GnipRules::Rule.new('#skylanders -skylanders -spyro', 'Skylanders')])
       assert{ response.response.class == Net::HTTPCreated }
     end
 

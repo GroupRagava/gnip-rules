@@ -14,7 +14,7 @@ There are two ways you can provide credentials to the gnip-api gem.
 
 * Pass them to the initialize method
 
-  `Gnip::RulesConnection.new( "chieflarl@larlbang.com", "larl!operator" ,'https://api.gnip.com:443/.../YOUR_ACCOUNT/.../rules.json' )`
+  `GnipRules::RulesConnection.new( "chieflarl@larlbang.com", "larl!operator" ,'https://api.gnip.com:443/.../YOUR_ACCOUNT/.../rules.json' )`
 
 * Via a configuration file at config/gnip.yml
 
@@ -28,13 +28,13 @@ There are two ways you can provide credentials to the gnip-api gem.
 ## Usage
 
 ```ruby
- @gnip_rules = Gnip::RulesConnection.new
+ @gnip_rules = GnipRules::RulesConnection.new
 ```
 
 ### Adding
 
 ```ruby
-  rules = [Gnip::Rule.new "larl -bang", Gnip::Rule.new "#larloperator", Gnip::Rule.new "larlygag" , "some_tag"]
+  rules = [GnipRules::Rule.new "larl -bang", GnipRules::Rule.new "#larloperator", GnipRules::Rule.new "larlygag" , "some_tag"]
   response = @gnip_rules.add( rules )
   p response #=> 201 Created
 ```
@@ -42,7 +42,7 @@ There are two ways you can provide credentials to the gnip-api gem.
 ### Removing
 
 ```ruby
-  rules = [Gnip::Rule.new "larl -bang", Gnip::Rule.new "#larloperator"]
+  rules = [GnipRules::Rule.new "larl -bang", GnipRules::Rule.new "#larloperator"]
   response = @gnip_rules.remove( rules )
   p response #=> 200 OK
 ```
