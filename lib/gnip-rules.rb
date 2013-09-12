@@ -10,7 +10,7 @@ module GnipRules
     format :json
 
     def initialize( configuration = nil, username = nil, password = nil, uri = nil )
-      @configuration_file = configuration
+      @configuration_file = "config/gnip.yml"
       unless username && password && uri
         load_credentials!
         username = @config["username"]
@@ -87,11 +87,11 @@ module GnipRules
       @errors = []
     end
 
-    # def to_json
-    #   o = {"value" => value}
-    #   o.merge!( "tag" => tag ) unless tag.nil?
-    #   JSON.generate( o )
-    # end
+    def to_json
+      o = {"value" => value}
+      o.merge!( "tag" => tag ) unless tag.nil?
+      JSON.generate( o )
+    end
 
     def as_json(options={})
       o = {"value" => value}
