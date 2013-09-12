@@ -3,7 +3,7 @@
 # Instead, edit Jeweler::Tasks in Rakefile, and run 'rake gemspec'
 # -*- encoding: utf-8 -*-
 
-require 'gniprules/version'
+require 'gnip-rules/version'
 
 Gem::Specification.new do |s|
   s.name = "gnip-rules"
