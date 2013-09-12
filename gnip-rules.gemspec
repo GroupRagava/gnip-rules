@@ -24,9 +24,9 @@ Gem::Specification.new do |s|
     "LICENSE.txt",
     "README.md",
     "Rakefile",
-    "VERSION",
     "gnip-rules.gemspec",
     "lib/gnip-rules.rb",
+    "lib/gnip-rules/version.rb",
     "test/helper.rb",
     "test/test_gnip-rules.rb",
     "test/test_rule.rb"
