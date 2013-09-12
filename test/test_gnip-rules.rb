@@ -1,6 +1,6 @@
 require 'helper'
 
-class TestGnipRules::Rules < Test::Unit::TestCase
+class TestGnipRules < Test::Unit::TestCase
   context 'GnipRules::' do
     setup do
       @gnip = GnipRules::RulesConnection.new
