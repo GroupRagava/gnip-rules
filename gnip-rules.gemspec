@@ -44,7 +44,7 @@ Gem::Specification.new do |s|
   s.add_dependency(%q<shoulda-context>, [">= 0"])
   s.add_dependency(%q<turn>, [">= 0"])
   s.add_dependency(%q<assert2>, [">= 0"])
-  s.add_dependency(%q<bundler>, ["~> 1.0.0"])
-  s.add_dependency(%q<jeweler>, ["~> 1.6.4"])
+  s.add_dependency(%q<bundler>, [">= 1.0.0"])
+  s.add_dependency(%q<jeweler>, [">= 1.6.4"])
   s.add_dependency(%q<rcov>, [">= 0"])
 end
