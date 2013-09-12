@@ -3,6 +3,8 @@
 # Instead, edit Jeweler::Tasks in Rakefile, and run 'rake gemspec'
 # -*- encoding: utf-8 -*-
 
+require 'gniprules/version'
+
 Gem::Specification.new do |s|
   s.name = "gnip-rules"
   s.version = GnipRules::VERSION
