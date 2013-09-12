@@ -34,11 +34,11 @@ module Gnip
     end
 
     def list
-      self.class.get( '/rules.json' )
+      self.class.get( '/rules.json' )['rules']
     end
 
     def delete_all!
-      rules = self.list["rules"]
+      rules = self.list
       self.remove( rules )
     end
 
