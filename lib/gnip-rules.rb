@@ -2,7 +2,7 @@ require 'active_support'
 require 'httparty'
 require 'json'
 
-module GnipRules::Rules
+module GnipRules
   class RulesConnection
     include HTTParty
 
